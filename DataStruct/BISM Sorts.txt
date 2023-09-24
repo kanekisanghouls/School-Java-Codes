@@ -1,4 +1,4 @@
-BUBBLE SORTS
+SELECTION SORTS
 
 import java.util.Random;
 import java.util.Scanner;
@@ -14,10 +14,10 @@ public class SelectionSort {
                 if (arraySize >= 1 && arraySize <= 100) {
                     break;
                 } else {
-                    System.out.print("Invalid size. Please enter a number between 1 and 100: ");
+                    System.out.print("Invalid Input Array Size! \nEnter array size(1-100): ");
                 }
             } catch (NumberFormatException e) {
-                System.out.print("Invalid size. Please enter a number between 1 and 100: ");
+                System.out.print("Invalid Input Array Size! \nEnter array size(1-100): ");
             }
         }
         int[] array = new int[arraySize];
@@ -75,7 +75,7 @@ public class SelectionSort {
 
 ======================
 
-SELECTION SORTS
+SHELL SORTS
 
 import java.util.Arrays;
 import java.util.Random;
@@ -116,15 +116,15 @@ public class ShellSort {
         while (true) {
             try {
                 System.out.print(message);
-                size = sc.nextInt();
+                String input = sc.nextLine();
+                size = Integer.parseInt(input);
                 if (size >= 1 && size <= 100) {
                     return size;
                 } else {
-                    System.out.println("Invalid input. Please enter a number between 1 and 100.");
+                    System.out.println("Invalid Input Array Size! \nEnter array size(1-100): ");
                 }
-            } catch (Exception e) {
-                System.out.println("Invalid input. Please enter an integer. Try again.");
-                sc.nextLine();
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid Input Array Size! \nEnter array size(1-100): ");
             }
         }
     }
@@ -139,6 +139,7 @@ public class ShellSort {
         return array;
     }
 }
+
 
 
 ==============
@@ -159,10 +160,10 @@ public class InsertionSort {
                 if (arraySize >= 1 && arraySize <= 100) {
                     break;
                 } else {
-                    System.out.print("Invalid size. Please enter a number between 1 and 100: ");
+                    System.out.print("Invalid Input Array Size! \nEnter array size(1-100): ");
                 }
             } catch (NumberFormatException e) {
-                System.out.print("Invalid size. Please enter a number between 1 and 100: ");
+                System.out.print("Invalid Input Array Size! \nEnter array size(1-100): ");
             }
         }
         int[] array = new int[arraySize];
