@@ -1,31 +1,28 @@
-public class SnakeGame {
-	public static void main(String[] args) {
-		 new GameFrame();
-	}
-}
-
 import javax.swing.JFrame;
-public class GameFrame extends JFrame{
-	GameFrame(){	
-		this.add(new GamePanel());
-		this.setTitle("Snake Game - DATASTRUCT");
-		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setResizable(false);
-		this.pack();
-		this.setVisible(true);
-		this.setLocationRelativeTo(null);
-		
-	}
-}
-
-
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 import java.util.Random;
+public class SnakeGame {
+    public static void main(String[] args) {
+        new GameFrame();
+    }
+}
 
-public class GamePanel extends JPanel implements ActionListener{
+class GameFrame extends JFrame{
+    GameFrame(){	
+        this.add(new GamePanel());
+        this.setTitle("Snake Game - DATASTRUCT");
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setResizable(false);
+        this.pack();
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+
+    }
+}
+
+class GamePanel extends JPanel implements ActionListener{
 
     static final int SCREEN_WIDTH = 1300;
     static final int SCREEN_HEIGHT = 750;
