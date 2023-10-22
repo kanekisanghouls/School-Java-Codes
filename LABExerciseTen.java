@@ -1,7 +1,14 @@
-public StringList() {
+import java.io.*;
+import java.util.Scanner;
+
+public class LABExerciseTen {
+    private String[] array;
+    private int size;
+
+    public LABExerciseTen() {
         this.array = new String[10];
         this.size = 0;
-        load();
+        load(); // Load data from a file
     }
 
     public void add(String element) {
@@ -74,7 +81,7 @@ public StringList() {
     }
 
     public static void main(String[] args) {
-        StringList stringList = new StringList();
+        LABExerciseTen stringList = new LABExerciseTen();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Menu:");
