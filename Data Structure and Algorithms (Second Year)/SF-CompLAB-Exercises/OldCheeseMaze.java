@@ -1,10 +1,12 @@
+// Mouse and Cheese Game Original Code No Modified (LAB ACTIVITY 13)
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Stack;
 
-public class MouseAndCheeseGame {
+public class OldCheeseMaze {
     private char[][] maze; // 2D array to represent the maze
     private int mazeSize; // Size of the maze
     private int mouseRow; // Current row of the mouse
@@ -14,7 +16,7 @@ public class MouseAndCheeseGame {
     private boolean hasPath = true; // Flag to check if a path exists
     private char[][] path_grid; // 2D array to represent the path the mouse takes
 
-    public MouseAndCheeseGame(int mazeSize) {
+    public OldCheeseMaze(int mazeSize) {
         this.mazeSize = mazeSize;
         this.maze = new char[mazeSize][mazeSize]; // Create the maze array
         this.path_grid = new char[mazeSize][mazeSize]; // Create the path grid
@@ -144,7 +146,7 @@ public class MouseAndCheeseGame {
                 int parentRow = parent[row][col] / mazeSize; // Get the parent row
                 int parentCol = parent[row][col] % mazeSize; // Get the parent column
                 path.addFirst("(" + row + ", " + col + ")"); // Add the current position to the path
-                path_grid[row][col] = ''; // Mark the path_grid with '' for the mouse's path
+                path_grid[row][col] = '*'; // Mark the path_grid with '*' for the mouse's path
                 row = parentRow; // Move to the parent row
                 col = parentCol; // Move to the parent column
             }
@@ -166,7 +168,7 @@ public class MouseAndCheeseGame {
         System.out.print("Enter the maze dimension: ");
         int mazeSize = scanner.nextInt();
 
-        MouseAndCheeseGame game = new MouseAndCheeseGame(mazeSize); // Create a new game
+        OldCheeseMaze game = new OldCheeseMaze(mazeSize); // Create a new game
         game.play(); // Start the game
     }
 }
