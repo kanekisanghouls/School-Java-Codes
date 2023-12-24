@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class EggsCC {
+public class EggStore {
     public static void main(String[] args) {
         System.out.print("\n[Title of your Store]");
         System.out.println("\nPlease enter the number of eggs, \nyou would like to order: ");

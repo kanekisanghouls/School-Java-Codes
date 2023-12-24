@@ -2,12 +2,12 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
-public class LABExerciseNine2 {
+public class Nine2 {
 
     private String[] array;
     private int size;
 
-    public LABExerciseNine2() {
+    public Nine2() {
         this.array = new String[10];
         this.size = 0;
         load();
@@ -63,7 +63,7 @@ public class LABExerciseNine2 {
     }
 
     public static void main(String[] args) {
-        LABExerciseNine2 stringList = new LABExerciseNine2();
+        Nine2 stringList = new Nine2();
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Menu:");

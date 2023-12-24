@@ -1,7 +1,8 @@
+// You can fix this code. And fix some logic on this code.
 import java.util.Random;
 import java.util.Scanner;
 
-public class tempinsert {
+public class SelectionSortsLAB31 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter array size (1-100): ");
@@ -31,7 +32,7 @@ public class tempinsert {
             }
         }
         System.out.println();
-        insertionSort(array);
+        selectionSort(array);
         System.out.print("Sorted array: ");
         for (int i = 0; i < arraySize; i++) {
             System.out.print(array[i]);
@@ -39,27 +40,33 @@ public class tempinsert {
                 System.out.print(", ");
             }
         }
-        scanner.close();
     }
 
-    public static void insertionSort(int[] arr) {
-        int arrayLength = arr.length;
-        for (int i = 1; i < arrayLength; i++) {
-            int key = arr[i];
-            int j = i - 1;
-
-            while (j >= 0 && arr[j] > key) {
-                arr[j + 1] = arr[j];
-                j--;
+    public static void selectionSort(int[] array) {
+        int size = array.length;
+        for (int i = 0; i < size - 1; i++) {
+            boolean swapped = false; // Track if any swaps are made in this iteration
+            int minIndex = i;
+            for (int j = i + 1; j < size; j++) {
+                if (array[j] < array[minIndex]) {
+                    minIndex = j;
+                    swapped = true; // Swap occurred
+                }
             }
+            
+            if (swapped) { // Only print if a swap occurred
+                // Swap elements
+                int temp = array[i];
+                array[i] = array[minIndex];
+                array[minIndex] = temp;
 
-            arr[j + 1] = key;
-
-            System.out.print("Iteration " + i + ": ");
-            for (int num : arr) {
-                System.out.print(num + ", ");
+                // Print iteration
+                System.out.print("Iteration " + (i + 1) + ": ");
+                for (int num : array) {
+                    System.out.print(num + ", ");
+                }
+                System.out.println();
             }
-            System.out.println();
         }
     }
 }

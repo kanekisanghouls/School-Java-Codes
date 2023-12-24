@@ -1,8 +1,8 @@
 import java.util.Scanner;
 import java.util.InputMismatchException;
-public class LABExerciseEight {
+public class Data1 {
     private String[] array;
-    public LABExerciseEight() {
+    public Data1() {
         this.array = new String[0];
     }
     public void add(String element) {
@@ -23,7 +23,7 @@ public class LABExerciseEight {
         }
     }
     public static void main(String[] args) {
-        LABExerciseEight stringList = new LABExerciseEight();
+        Data1 stringList = new Data1();
         Scanner scanner = new Scanner(System.in);
         int choice;
         System.out.println("\nMenu:");

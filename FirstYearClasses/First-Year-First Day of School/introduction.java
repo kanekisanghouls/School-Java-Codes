@@ -7,7 +7,7 @@ mport java.util.Scanner;
       System.out.print("\nSocial Media:\n");
       Links();
       System.out.print("");
-      text();
+      Text();
     
     }
     public static void Introduction(){

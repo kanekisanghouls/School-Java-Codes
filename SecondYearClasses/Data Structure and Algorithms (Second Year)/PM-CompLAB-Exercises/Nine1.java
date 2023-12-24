@@ -2,11 +2,11 @@ import java.io.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class LABExerciseNine {
+public class Nine1 {
     private ArrayList<String> array = new ArrayList<>();
 
     public static void main(String[] args) {
-        LABExerciseNine stringList = new LABExerciseNine();
+        Nine1 stringList = new Nine1();
         Scanner scanner = new Scanner(System.in);
         int choice;
 
@@ -44,20 +44,20 @@ public class LABExerciseNine {
         System.out.println("4. Save and Exit");
     }
 
-    private static void addElement(LABExerciseNine stringList, Scanner scanner) {
+    private static void addElement(Nine1 stringList, Scanner scanner) {
         System.out.println("Enter an element to add to the list: ");
         String element = scanner.next();
         stringList.array.add(element);
         System.out.println("Element added.");
     }
 
-    private static void displayElements(LABExerciseNine stringList) {
+    private static void displayElements(Nine1 stringList) {
         for (int i = 0; i < stringList.array.size(); i++) {
             System.out.println("Element " + i + ": " + stringList.array.get(i));
         }
     }
 
-    private static void findElement(LABExerciseNine stringList, Scanner scanner) {
+    private static void findElement(Nine1 stringList, Scanner scanner) {
         System.out.println("Enter an element to find: ");
         String target = scanner.next();
         int index = stringList.array.indexOf(target);
@@ -68,7 +68,7 @@ public class LABExerciseNine {
         }
     }
 
-    private static void loadFromFile(LABExerciseNine stringList) {
+    private static void loadFromFile(Nine1 stringList) {
         try (BufferedReader br = new BufferedReader(new FileReader("data.txt"))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -80,7 +80,7 @@ public class LABExerciseNine {
         }
     }
 
-    private static void saveAndExit(LABExerciseNine stringList) {
+    private static void saveAndExit(Nine1 stringList) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("data.txt"))) {
             for (String element : stringList.array) {
                 bw.write(element);

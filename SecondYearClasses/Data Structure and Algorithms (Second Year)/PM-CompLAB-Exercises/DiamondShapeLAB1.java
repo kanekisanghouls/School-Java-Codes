@@ -1,10 +1,10 @@
 import java.util.Scanner;
-public class DiamondShape {
+public class DiamondShapeLAB1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the character to draw the diamond: ");
+        System.out.print("Enter Char to draw Diamond: "); 
         char character = scanner.next().charAt(0);
-        System.out.print("Enter the number of characters from the center: ");
+        System.out.print("Enter # Char from the Center: ");
         int numChars = scanner.nextInt(); drawDiamond(character, numChars);
     }
     public static void drawDiamond(char character, int numChars) {

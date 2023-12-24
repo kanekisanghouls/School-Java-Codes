@@ -1,7 +1,7 @@
+// You can fix this code. And fix some logic on this code.
 import java.util.Random;
 import java.util.Scanner;
-import java.util.Arrays;
-public class BubbleSortLAB2 {
+public class SelectionSortsLAB32 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int size;
@@ -13,14 +13,20 @@ public class BubbleSortLAB2 {
             }
         } while (size < 1 || size > 100);
         int[] array = generateRandomArray(size);
-        System.out.print("Array content: ");
-        displayArray(array);
-        bubbleSort(array);
+        System.out.print("Original Array: ");
+        displayArray(array); // Display the original array
+
+        selectionSort(array);
+
+        System.out.print("Sorted Array: ");
+        displayArray(array); // Display the sorted array
+
         scanner.close();
     }
     public static int[] generateRandomArray(int size) {
         int[] array = new int[size];
         Random random = new Random();
+
         for (int i = 0; i < size; i++) {
             array[i] = random.nextInt(201) - 100;
         }
@@ -32,23 +38,19 @@ public class BubbleSortLAB2 {
         }
         System.out.println();
     }
-    public static void bubbleSort(int[] arr) {
+    public static void selectionSort(int[] arr) {
         int n = arr.length;
-        boolean swapped;
         for (int i = 0; i < n - 1; i++) {
-            swapped = false;
-            for (int j = 0; j < n - i - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                    swapped = true;
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
                 }
             }
-            if (!swapped) {
-                break;
-            }
-            System.out.print("Main Iteration" + (i + 1) + ": ");
+            int temp = arr[i];
+            arr[i] = arr[minIndex];
+            arr[minIndex] = temp;
+            System.out.print("Main Iteration " + (i + 1) + ": ");
             displayArray(arr);
         }
     }
